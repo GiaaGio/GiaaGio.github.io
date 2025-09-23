@@ -21,13 +21,14 @@
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>INICIO</title>
+    <link rel="shortcut icon" href="img/star.jpg" />
+    <title>TRABAJOS</title>
 </head>
 
 <!-- Modal pantalla completa -->
 <div id="modal-pdf" class="modal">
-  <span class="cerrar" onclick="cerrarPDF()">&times;</span>
-  <iframe id="iframe-pdf" src=""></iframe>
+    <span class="cerrar" onclick="cerrarPDF()">&times;</span>
+    <iframe id="iframe-pdf" src=""></iframe>
 </div>
 
 <body>
@@ -47,10 +48,21 @@
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="sobre.html">SOBRE MÍ</a></li>
-                <li><a href="trabajos.html">TRABAJOS</a></li>
+                <li><a href="cursos.html">TRABAJOS</a></li>
+                <li><a href="login.html"><img src="img/user.png" alt="user"></a></li>
             </ul>
         </nav>
     </header>
+
+    <section class="actividades-cabecera">
+        <a href="cursos.html"><img src="img/volver.png" alt="volver"></a>
+        <div>
+            <h3>PROYECTO DE APLICACIÓN PROFESIONAL</h3>
+            <h4>Ing. Fernández Bejarano Raúl Enrique</h4>
+        </div>
+        <img src="img/logo_iestp.png" alt="logo_iestp">
+    </section>
+
 
     <section class="actividades">
         <div class="grid">
@@ -84,10 +96,10 @@
             <div class="card">
                 <img src="img/tarea.png" alt="actividad">
                 <h3>SEMANA 2</h3>
-                <p>Actividad de la semana, sin título</p>
+                <p>Actores y organización del Proyecto Web</p>
                 <div class="acciones">
-                    <button class="btn" onclick="abrirPDF('pdf/')">Ver</button>
-                    <a href="pdf/" download>
+                    <button class="btn" onclick="abrirPDF('pdf/TAREA 2 - TAP.pdf')">Ver</button>
+                    <a href="pdf/TAREA 2 - TAP.pdf" download>
                         <button class="btn-descargar"><img src="img/descargar.png" alt="descargar"></button>
                     </a>
                 </div>
