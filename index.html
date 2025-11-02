@@ -48,13 +48,17 @@
     </nav>
   </header>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="estrellas"><img src="img/estrellas.jpg" alt="estrella"></div>
     <h1 class="titulo">portafolio</h1>
     <div class="estrellas-1"><img src="img/estrellas.jpg" alt="estrella"></div>
+
     <div class="info">
-      <h2 class="subtitulo">UX & UI DESIGNER</h2>
+      <h2 class="subtitulo">
+        <span id="titulo">UX & UI DESIGNER</span>
+        <span class="cursor"></span>
+      </h2>
+
       <p class="intro">
         <b>¡HOLA!</b> <br>
         MI NOMBRE ES GIANELLA Y... <br><br>
@@ -62,51 +66,78 @@
         Mi enfoque está en aportar soluciones innovadoras que optimicen la experiencia digital en cada interacción.
       </p>
 
-      <!-- Redes sociales -->
       <div class="social-icons">
-        <a href="https://www.linkedin.com/in/gianella-giovana-poma-atahuaman-710b64341"><img src="img/linkedin.png" alt="linkedin"></a>
+        <a href="https://www.linkedin.com/in/gianella-giovana-poma-atahuaman-710b64341"><img src="img/linkedin.png"
+            alt="linkedin"></a>
         <a href="https://www.facebook.com/share/1ZNPd7BBge/"><img src="img/facebook.png" alt="facebook"></a>
-        <a href="https://www.instagram.com/eolyne_g?igsh=ZjdzNTV3dGs1NTJ6"><img src="img/instagram.png" alt="instagram"></a>
+        <a href="https://www.instagram.com/eolyne_g?igsh=ZjdzNTV3dGs1NTJ6"><img src="img/instagram.png"
+            alt="instagram"></a>
         <a href="https://x.com/Gggi_Gggi?t=6KxD7TZ91HxaRf4fllEBnQ&s=09"><img src="img/x.png" alt="x"></a>
       </div>
     </div>
-
   </section>
 
   <!-- Footer -->
   <footer>
-  <div class="footer-container">
-    <div class="footer-track">
-      <!-- Bloque 1 -->
-      <div class="footer-scroll">
-        <span>DISEÑO</span>
-        <span>PASIÓN</span>
-        <span>CREATIVIDAD</span>
-        <span>INNOVACIÓN</span>
-        <span>DISEÑO</span>
-        <span>PASIÓN</span>
-        <span>CREATIVIDAD</span>
-        <span>INNOVACIÓN</span>
-      </div>
-      <!-- Bloque 2 (idéntico al 1) -->
-      <div class="footer-scroll">
-        <span>DISEÑO</span>
-        <span>PASIÓN</span>
-        <span>CREATIVIDAD</span>
-        <span>INNOVACIÓN</span>
-        <span>DISEÑO</span>
-        <span>PASIÓN</span>
-        <span>CREATIVIDAD</span>
-        <span>INNOVACIÓN</span>
-                <span>DISEÑO</span>
-        <span>PASIÓN</span>
-        <span>CREATIVIDAD</span>
-        <span>INNOVACIÓN</span>
+    <div class="footer-container">
+      <div class="footer-track">
+        <!-- Bloque 1 -->
+        <div class="footer-scroll">
+          <span>DISEÑO</span>
+          <span>PASIÓN</span>
+          <span>CREATIVIDAD</span>
+          <span>INNOVACIÓN</span>
+          <span>DISEÑO</span>
+          <span>PASIÓN</span>
+          <span>CREATIVIDAD</span>
+          <span>INNOVACIÓN</span>
+        </div>
+        <!-- Bloque 2 (idéntico al 1) -->
+        <div class="footer-scroll">
+          <span>DISEÑO</span>
+          <span>PASIÓN</span>
+          <span>CREATIVIDAD</span>
+          <span>INNOVACIÓN</span>
+          <span>DISEÑO</span>
+          <span>PASIÓN</span>
+          <span>CREATIVIDAD</span>
+          <span>INNOVACIÓN</span>
+          <span>DISEÑO</span>
+          <span>PASIÓN</span>
+          <span>CREATIVIDAD</span>
+          <span>INNOVACIÓN</span>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
+<script>
+  const textos = ["UX & UI DESIGNER", "PROGRAMADORA", "DISEÑADORA GRÁFICA"];
+  let indice = 0;
+  const titulo = document.getElementById("titulo");
+
+  function escribirTexto(texto, i = 0) {
+    titulo.textContent = texto.slice(0, i);
+    if (i < texto.length) {
+      setTimeout(() => escribirTexto(texto, i + 1), 100);
+    } else {
+      setTimeout(borrarTexto, 2000);
+    }
+  }
+
+  function borrarTexto() {
+    const textoActual = titulo.textContent;
+    if (textoActual.length > 0) {
+      titulo.textContent = textoActual.slice(0, -1);
+      setTimeout(borrarTexto, 60);
+    } else {
+      indice = (indice + 1) % textos.length;
+      escribirTexto(textos[indice]);
+    }
+  }
+
+  escribirTexto(textos[indice]);
+</script>
 
 </html>

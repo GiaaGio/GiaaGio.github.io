@@ -249,7 +249,35 @@ body[data-page="home"] {
   font-weight: 400;
   color: #000;
   font-family: "Spinnaker", sans-serif;
+  white-space: nowrap;
+  overflow: visible; /* <-- importante */
+  display: inline-flex;
+  align-items: center;
+  min-height: 1em;
+  position: relative;
 }
+
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.2em;
+  background-color: #000;
+  margin-left: 5px;
+  flex-shrink: 0;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+
 
 .intro {
   max-width: 600px;
